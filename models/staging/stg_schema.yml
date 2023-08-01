@@ -2,6 +2,9 @@ version: 2
 
 models:
   - name: stg_cc_parcel
+    description: >
+      This model should contain more information regarding our parcels.
+      It will be updated every day at 09:00.
     columns:
       - name: parcel_id
         tests:
