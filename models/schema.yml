@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_cc_funnel_priority
+    columns:
+      ### PK ###
+      - name: company
+        tests:
+          - unique
+          - not_null
+      - name: priority
+        tests:
+          - accepted_values:
+              values: ["Low", "Medium", "High"]
+  - name: stg_cc_funnel
+    columns:
+      ### PK ###
+      - name: company
+        tests:
+          - unique
+          - not_null
+      ###########
+      - name: date_lead
+        tests:
+          - not_null
