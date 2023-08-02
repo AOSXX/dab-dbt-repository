@@ -1,18 +1,22 @@
 version: 2
 
 models:
-  - name: stg_cc_parcel
+  - name : stg_cc_parcel
     description: >
       This model should contain more information regarding our parcels.
-      It will be updated every day at 09:00.
+      It will be updated every day at 21:00.
     columns:
       - name: parcel_id
         tests:
           - unique
           - not_null
   - name : stg_cc_parcel_products
+    description : >
+      This model is containing more detailed information regarding the 
+      product and their respective analytical infos.
     columns:
       - name: "(parcel_id || '-' || model_name)"
+        description : "The formula for this column is : (parcel_id || '-' || model_name)"
         tests:
           - unique
           - not_null
